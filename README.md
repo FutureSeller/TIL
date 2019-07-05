@@ -2,21 +2,33 @@
 Today I Learned
 
 ## 작성 규칙
-- 문서 생성은 [GFM (Github Flavored Markdown)](https://help.github.com/articles/github-flavored-markdown/) 을 사용한다.
-  - 확장자 `.md`
-  - column은 120을 넘지 않도록 한다.
-  - `tab`을 사용하지 않고 `space`를 사용한다. (현재 tab == 2 spaces를 유지 중)
-  - 예외
-    - grave accent 내부에 작성된 내용은 스크롤이 되므로 예외로 둔다. (되도록 지킬 것)
-- 언어나 기술명으로 Directory를 만든다. 
-  - root에 문서를 만들지 않는다.
-  - Sub directory를 만들지 않는다.
-- 파일명은 영어로 만든다.
-- commit은 다음과 같은 format으로 작성한다. 
-  - date: yyyymmdd
-  - dirname: 현재 문서가 위치한 dirname. root일 경우 empty
-  - msg: commit message
-  - format: `[${date}:${dirname}] ${msg}`
-  - example
-    - @args(date=20190701, dirname=algorithm, msg="merge sort") → `[20190701:algorithm] merge sort`
-    - @args(date=20190701, dirname= , msg="update README.md") → `[20190701] update README.md`
+
+### Name
+- 모든 파일과 디렉토리 명은 영어로 만든다.
+- space가 필요한 경우 `_`를 사용한다.
+- 디렉토리: 언어, 기술명, 주제등을 사용한다.
+- 파일: 해당 문서를 읽지않고도 무엇에 대한 문서인지 알 수 있도록 명명한다.
+
+### Document
+- [GFM (Github Flavored Markdown)](https://help.github.com/articles/github-flavored-markdown/)을 사용(확장자 `.md`)
+- column: max 120
+- indentation: two-spaces
+- 예외: grave accent 내부에 작성된 내용은 스크롤이 되므로 예외로 둔다. (되도록 지킬 것)
+
+### Commit
+- format: `[${date}:${dirname}] ${msg}`
+- date: yyyymmdd
+  - 기준점: 오전 6시
+  - example: 20190701 06:00 ~ 20190702 05:59 → 20190701
+- dirname: 현재 문서가 위치한 dirname. root일 경우 empty
+- msg: commit message
+- example
+  - @args(date=20190701, dirname=algorithm, msg="merge sort") → `[20190701:algorithm] merge sort`
+  - @args(date=20190701, dirname= , msg="update README.md") → `[20190701] update README.md`
+
+### ETC
+- root에 문서를 만들지 않는다. (README.md 제외)
+- Subdirectory를 만들지 않는다.
+
+## Reference
+- [JayJin님의 TIL](https://github.com/milooy/TIL)
