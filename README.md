@@ -21,10 +21,11 @@ Today I Learned
   - 기준점: 오전 6시
   - example: 20190701 06:00 ~ 20190702 05:59 → 20190701
 - dirname: 현재 문서가 위치한 dirname. root일 경우 empty
-- msg: commit message
+- msg: commit message. 점진적인 update 필요 시, `..ing`를 뒤에 붙임
 - example
   - @args(date=20190701, dirname=algorithm, msg="merge sort") → `[20190701:algorithm] merge sort`
   - @args(date=20190701, dirname= , msg="update README.md") → `[20190701] update README.md`
+  - @args(date=20190701, dirname=react , msg="CRA ..ing") → `[20190701:react] CRA ..ing`
 
 ### ETC
 - root에 문서를 만들지 않는다. (README.md 제외)
