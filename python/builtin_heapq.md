@@ -37,3 +37,30 @@ tmp = map(lambda x: -x, nums)
 heapq.heapify(tmp)
 print nums # inverted maxHeap: [-5, -4, -3, -2]
 ```
+
+- `__lt__`: primitive한 것이 아닌 object 들에 대해 heapq의 ordering 방식을 전달해주는 방법
+``` python
+class Point:
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+
+  # self is less than others에 대한 조건
+  def __lt__(self, other):
+    return self.distance() > other.distance()
+    
+  def distance(self):
+    return (self.x * self.x) + (self.y * self.y)
+    
+  def stringify(self):
+    print("[" + str(self.x) + ", " + str(self.y) + "] ", end='')
+    
+result = []
+heappush(result, Point(1, 1))
+heappush(result, Point(3, 1))
+for p in result:
+  p.stringify()
+
+# [3, 1]
+# [1, 1]
+```
