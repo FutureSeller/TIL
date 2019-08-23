@@ -9,11 +9,57 @@
     - No caching: 말 그대로 매번 서버로부터 download.
     - revalidate: cache가 release되기 전, 유효한 cache인지 재검증
   - `Cache-Control: public`
+    - "cached by any cache"
+    - 인증이나 보통 caching이 안되는 response status code도 가능
   - `Cache-Control: private`
   - `Cache-Control: max-age=<seconds>`
-- ETags
-- If-None-Match
-
+    - "most important directive": Expiration
+    - 언제까지 살아있을 것인가
+    - `max-age`가 너무 큰 값이면 서버에 값이 바뀌어도 클라이언트에 반영되지 않음
+- Freshness
+  - 왜? 
+    - "cache eviction": 무한한 storage가 아니기 때문
+    - server-side의 resource update
+  - fresh: expiration time을 초과하지 않음
+  - stale: !fresh
+  - If-None-Match
+    - stale할 때, 서버로 아직 해당 resource가 fresh한지 확인
+    - fresh하다면 서버에서 304(Not Modified) header만 응답 (body X)
+  - How to calculate?
+    - `Cache-control: max-age=N`: lifetime은 N
+    - 위에 헤더가 없으면 `Expires` 확인 후, `Date` 헤더 확인: `Expires - Date`
+    - 둘 다 없으면, `Last-Modified` 확인: `(Date - Last-Modified)/10`
+    - `expirationTime = responseTime + freshnessLifetime - currentAge`
+- Revving
+  - expiration time을 길게 잡으면 여러모로 이득인데, 자주 업데이트 되는 경우가 있고 아닌 경우가 있음
+  - Infrequently updated files vs. frequently updated files
+  - Infrequently
+    - HTML (expires regulary) + JS/CSS (infrequently updated)인 상황이라 가정
+    - JS/CSS: max-age를 매우 길게 설정 후, revision(or version) 번호를 URL(filename)에 부여
+    - JS/CSS의 변경 시, revision/version을 변경하여 HTML 변경을 통해 간접적으로 알게 해줌
+    - 서버로부터 새로운 버전의 JS/CSS를 가져옴, 기존에 있던 건 cache의 eviction algorithm에 맡김
+- ETag
+  - resource의 특정 버전을 나타내는 식별자. 해당 리소스가 fresh한지 확인하는데 쓰임
+  - 서버의 재전송을 막아주고, 동시다발적인 update를 막아줌(mid-air collisions)
+  - 리소스 변경 시, 새로운 Etag 또한 생성됨. fingerprint 처럼.
+  - Syntax
+    - `W/`: weak validators
+    - `<etag_value>`: ASCII와 같이 고유한 형태로 나타냄. hash를 주로 사용
+  - If-Match(Request)
+    - `ETag: "33a64df551425fcc55e4d42a148795d9f25f89d4"` 인 리소스가 있다고 할 때
+    - 문서 수정 후, POST 요청을 `If-Match: "33a64df551425fcc55e4d42a148795d9f25f89d4"`와 같이 보냄
+    - ETag와 비교해, 일치하지 않음
+      - 이미 수정됨을 알 수 있음
+      - 412(Precondition Failed)를 던짐
+  - If-None-Match(Request): 바뀌지 않았는지 확인(여전히 fresh 한지). 304(Not Modified)를 던짐
+  - Last-Modified(Response): 서버가 알고 있는 가장 마지막으로 수정된 날짜와 시각. ETag보다는 부정확하나 대체자
+  - If-Modified-Since(Request): Last-Modified가 응답으로 오면, cache된 resource 검증을 위해 발급
+- Vary(Response)
+  > useful for serving content dynamically. Vary: User-Agent
+  - 특정 조건(헤더 값)에 의해 이미 caching된 resource를 가져올 지, origin으로 부터 가져올지 결정됨
+  - 304(Not Modified) or 200(OK)와 함께
+  - `Vary: *`: 모든 요청을 unique하며 uncacheable하다고 판단. (`Cache-Control: no-store`)
+  - `Vary: User-Agent`: user agent를 고려한 caching
 ---
 ## Reference
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
