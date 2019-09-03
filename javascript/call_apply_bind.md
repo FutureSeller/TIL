@@ -20,12 +20,28 @@ obj.yell.call(obj2); // 'what?'
 ## bind
 - 함수 호출은 하지 않고, bind까지만 하고 끝
 - 나중에 호출할 때, this를 binding 해놓음
+- bind 시, `bound function`을 반환함. (A bound function is an exotic object that wraps another function object.)
+- chaining bind는 안되는데 rebind는 됨
+  - chaining bind: `a.bind().bind()`
+  - rebind: `a.bind(); \n a.bind(); ...`
+  - 왜? (https://stackoverflow.com/questions/26545549/chaining-bind-calls-in-javascript-unexpected-result#answer-26547029)
+  - `Function.prototype.bind`의 [pollyfill](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#%ED%8F%B4%EB%A6%AC%ED%95%84)을 보면 bind가 이전 this를 물고있음
+
+```javascript
+function a() {
+  console.log(this);
+}
+
+a.bind({foo:"bar"}).bind({oof:"rab"})(); // { foo: "bar" }
+a.bind({foo:"bar"})(); // { foo: "bar" }
+a.bind({oof:"rab"})(); // { oof: "rab" }
+```
 
 ## 응용
 - `arguments`같은 array-like object를 다룸
   - array-like: index로 접근 가능 + length 속성 있음. 그러나 array method 사용 불가
   
-```js
+```javascript
 function example3() {
   // Array.from(arguments).join(',');
   console.log(Array.prototype.join.call(arguments)); 
