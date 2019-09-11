@@ -2,6 +2,7 @@
 > combination of a function and the lexical environment within which that function was declared - MDN
 
 - 직역하자면 함수 + 함수가 속해있는 lexical environment를 가지고 있는 것
+- 실행이 끝난 외부 함수의 Variable Object(Execution Context)에 접근할 수 있는 함수
 - lexical environment? → Lexical Scoping `Scope { Variable Object }`
 - closure는 outer function의 변수에 접근할 수 있다.
 
@@ -44,6 +45,26 @@ result = add(1) // 1
     - `_ops()`는 `acc + num`라는 결과 값을 반환 함
     - `acc`와 `num`은 outer scope에서 볼 수 없으니 sweep함
 
+- 성능 고려 사항: 불필요한 closure는 생성하지 않는게 좋음
+  - e.g., 새로운 생성자 함수를 정의할 때
+    - 메서드는 this object에 정의되기보다 object type의 prototype object에 정의되어야 함
+    - 생성자가 호출될 때 마다 메서드가 생성되기 때문
+    - 두 가지의 차이점은?
+      - [1]: getName을 MyObj를 생성할 때마다 생성함
+      - [2]: 한 번 prototype을 만들어놓고, prototype chain을 참조
+
+``` javascript
+/* [1] */                         | /* [2] */
+function MyObj(name, message) {   | function MyObj(name, message) {}
+  this.name = name;               |   this.name = name;
+  this.message = message;         |   this.message = message;
+  this.getName = function() {     | }
+    return this.name              |
+  }                               | MyObj.prototype.getName = {
+}                                 |   return this.name;
+                                  | }
+```
+
 ### Questions
 - Q. 이런 특징이 있는 건 알겠는 데 Closure를 왜 쓰는 거지? == 장점은?
   - Stateful. Encapsulation
@@ -78,6 +99,10 @@ result = add(1) // 1
   setupHelp();
   /*
     root cause: [1]이 closure. item.help를 공유하기 때문에 item의 help는 모두 age의 help가 됨
+      - Scope Chain : [onFocus, setupHelp, Global]
+      setupHelp's VO {
+        item = { 'id': 'age', 'help': 'Your age....' }
+      }
     resolve:
       - Closure를 덧댄다 : Closure는 enclosing lexical scope만 바라보기 때문에 lexical scope을 하나 더 만들면됨
       - var 대신 let 을 쓴다. (lexical scope 알아서 해 줌)
