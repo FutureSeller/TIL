@@ -1,5 +1,6 @@
 # Execution Context
 - 실행 가능한 코드가 실행되는 환경
+- 실행 가능한 코드 (executable code)를 만나면 생성됨
   - 전역 코드
   - 함수 코드
   - Eval
@@ -52,7 +53,11 @@ ExecutionContext {
 ```
 
 ### Variable Object
-- 전역 컨텍스트
+- parameters, arguments
+- function declartaions
+- variables
+- 브라우저에서 globalEC의 VO는 window임
+
 ``` javascript
 // 모든 전역 변수/함수 등을 포함하는 전역객체 가리킴
 // 전역 객체는 전역에 선언된 전역 변수와 전역함수를 프로퍼티로 소유
@@ -80,6 +85,7 @@ const fooEC = {
 ```
 
 ### Scope Chain
+- 현재 EC의 VO + 상위 EC의 Scope Chain
 - 전역 객체와 중첩된 함수의 스코프의 레퍼런스를 저장
 - 식별자 중에서 객체(전역 객체 제외)의 프로퍼티가 아닌 변수를 검색
 -  프로퍼티를 검색하는 것은 `Prototype Chain`
