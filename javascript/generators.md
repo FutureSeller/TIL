@@ -28,8 +28,10 @@
     ```
   - Iterator protocol
     - value들의 sequence를 만드는 방법을 정의
-    - `next` method를 가지고 있고, iterator result object: `done`, `value`가 있음
-    - `next: Function`, `done: Boolean`, `value: any`
+    - methods
+      - `next`: iterator result를 반환(`done`, `value`로 구성됨) [required]
+      - `throw`: exception handling. [optional]
+      - `return`: param으로 들어간 값을 반환 후, `done` [optional] 
     ``` javascript
     function idMaker() {
       var index = 0;
@@ -45,7 +47,30 @@
     console.log(it.next().value); // '0'
     console.log(it.next().value); // '1'
     console.log(it.next().value); // '2'
+
+    // throw method
+    function* gen() {
+      while(true) {
+        try {
+          yield 42;
+        } catch(e) {
+          console.log("Error caught!");
+          break;
+        }
+      }
+    }
+    var g = gen();
+    g.next();
+    // { value: 42, done: false }
+    g.throw(new Error("Something went wrong"));
+    // "Error caught!"
+    // { value: 42, done: false }
+    g.next();
+    // { value: undefined, done: true }
     ```
+  - IteratorResult
+    - done: iteration의 종료 여부
+    - value: yield된 값, done이 true일 경우 undefined
 
 ### Content: Wrap up
 - 제너레이터 함수: `function*` 키워드로 작성되는 함수, 하나 이상의 yield 포함, 반환 시 제너레이터 반환
@@ -126,3 +151,4 @@ watch({}, function* (compilation) {
 - https://meetup.toast.com/posts/140
 - https://goshakkk.name/javascript-generators-understanding-sample-use-cases
 - https://jasonhpriestley.com/array-distance-and-recursion
+- https://dev.to/jfet97/javascript-iterators-and-generators-synchronous-iterators-141d
