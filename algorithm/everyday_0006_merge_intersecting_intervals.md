@@ -27,7 +27,7 @@ function solve(input) {
   for (let idx = 1; idx < sorted.length; idx += 1) {
     const peek = result[result.length - 1];
     const cursor = sorted[idx];
-    if (isOverlapped(peek, sorted[idx])) {
+    if (isOverlapped(peek, cursor)) {
       peek[END] = Math.max(peek[END], cursor[END]);
     } else {
       result.push(cursor);
