@@ -1,12 +1,12 @@
 Feel free to describe any words with definition
 
 ## B
-<details><summary>Backward compatibility</summary><pre>
+<details><summary>Backward compatibility</summary><p>
 
 > a property of a system, product, or technology that allows for interoperability with an older legacy system, or with input designed for such a system, especially in telecommunications and computing 
 
 https://en.wikipedia.org/wiki/Backward_compatibility
-</pre></details>
+</p></details>
 <!-- delimiter -->
 
 ## F
@@ -28,7 +28,7 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 <!-- delimiter -->
 
 ## M
-<details><summary>Mixin</summary><pre>
+<details><summary>Mixin</summary><p>
 
 > a class that contains methods for use by other classes without having to be the parent class of those other classes.
 
@@ -48,6 +48,6 @@ var randomizerMixin = function ( Base ) {
 ```
 
 https://en.wikipedia.org/wiki/Mixin
-</pre></details>
+</p></details>
 <!-- delimiter -->
 
