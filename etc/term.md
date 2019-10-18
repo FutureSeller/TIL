@@ -51,3 +51,14 @@ https://en.wikipedia.org/wiki/Mixin
 </p></details>
 <!-- delimiter -->
 
+## T
+<details><summary>TTFB</summary><p>
+	
+```
+TTFB(Time to First Byte)
+- a measurement used as an indication of the responsiveness of a webserver or other network resource.
+- measures the duration from the user or client making an HTTP request to the first byte of the page being received by the client's browser.
+- https://en.wikipedia.org/wiki/Time_to_first_byte
+```
+</p></details>
+
