@@ -3,18 +3,23 @@
 ``` javascript
 const object1 = {};
 
-Object.isExtensible(object1) // expected output: true
+// default object: extensible
+Object.isExtensible(object1) // true
+
+// Object.preventExtensions: inextensible
 Object.preventExtensions(object1)
-Object.isExtensible(object1) // expected output: false
+Object.isExtensible(object1) // false
 
+// Object.seal: inextensible
 var sealed = Object.seal({})
-Object.isExtensible(sealed) // === false
+Object.isExtensible(sealed) // false
 
+// Object.freeze: inextensible
 var frozen = Object.freeze({})
-Object.isExtensible(frozen) // === false
+Object.isExtensible(frozen) // false
 
 // in ES5
-Object.isExtensible(1) // TypeError
+Object.isExtensible(1) // Type Error
 
 // in ES6
 Object.isExtensible(1) // === false
@@ -32,19 +37,42 @@ const object1 = {
 };
 
 Object.seal(object1);
+
+// change (O)
 object1.property1 = 33;
-console.log(object1.property1);
-// expected output: 33
+console.log(object1.property1); // expected output: 33
 
+// delete (X)
 delete object1.property1; // cannot delete when sealed
-console.log(object1.property1);
-// expected output: 33
+console.log(object1.property1); // expected output: 33
 
-object1.property1 = '1'
-console.log(object1.property1);
-// expected output: "1"
+// add (X)
+object1.property2 = '1'
+console.log(object1.property2); // expected output: undefined
 
+// data prop -> accessor (X)
 Object.defineProperty(object1, 'foo', { get: function() { return 'g'; } }); // TypeError
+```
+
+## Object.preventExtension
+- 새로운 속성이 추가되는 것을 방지, `__proto__`의 확장 또한 막는다.
+- `default`에서 `preventExtension`으로 만들순 있으나, 역은 불가능하다.
+
+``` javascript
+let obj = { 'a' : 1 };
+Object.preventExtensions(obj);
+
+// change (O)
+obj['a']= 2;
+console.log(obj); //{ a: 2 }
+
+// remove (O)
+delete obj['a']
+console.log(obj); //{}
+
+// add (X)
+obj['b'] = 1;
+console.log(obj); //{}
 ```
 
 ## Object.freeze
@@ -60,11 +88,18 @@ var o = Object.freeze(obj);
 
 o === obj // === true
 
-obj.prop = 33;
-// Throws an error in strict mode
+// change (X)
+obj.prop = 33; // Throws an error in strict mode
+console.log(obj.prop); // expected output: 42
 
-console.log(obj.prop);
-// expected output: 42
+// add (X)
+obj.prop2 = 42;
+console.log(obj); // { prop: 42 }
+
+// remove (X)
+delete obj['prop'];
+console.log(obj); // { prop: 42 }
+
 ```
 - 얕은 동결
   - 직속 속성(바로 아래의 property)에만 적용됨
@@ -87,11 +122,17 @@ employee.address.city = "Noida"; // 자식 객체의 속성은 수정 가능
 console.log(employee.address.city) // 출력: "Noida"
 ```
 
-## freeze vs. seal
-- property 변경 여부 (data <-x-> accessor는 안됨)
+## freeze vs. seal vs. preventExtension
+
+| Operation | default | preventExtension | seal | freeze |
+| -      | - | - | - | - |
+| add    | ✓ | - | - | - |
+| remove | ✓ | ✓ | - | - |
+| change | ✓ | ✓ | ✓ | - |
 
 ---
 ## Reference
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/seal
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+- https://til.cybertec-postgresql.com/post/2019-10-11-Object-preventExtension-vs-seal-vs-freeze
