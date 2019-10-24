@@ -51,6 +51,26 @@ https://en.wikipedia.org/wiki/Mixin
 </p></details>
 <!-- delimiter -->
 
+## P
+<details><summary>POJO</summary><p>
+
+```
+
+POJO(Plain Old Java Object, Plain Old JavaScript Object)
+
+the simplest kind of object that should not (in Java):
+1. extend prespecified class
+2. implement prespeficied interfacse
+3. contain prespecified annotations
+
+Reference: 
+- https://en.wikipedia.org/wiki/Plain_old_Java_object
+- https://www.geeksforgeeks.org/pojo-vs-java-beans/
+```
+</p></details>
+
+<!-- delimiter -->
+
 ## T
 <details><summary>TTFB</summary><p>
 	
@@ -61,4 +81,4 @@ TTFB(Time to First Byte)
 - https://en.wikipedia.org/wiki/Time_to_first_byte
 ```
 </p></details>
-
+<!-- delimiter -->
