@@ -1,11 +1,52 @@
 Feel free to describe any words with definition
 
+## A
+<details><summary>Astroturfing</summary><p>
+
+> "어떤 사안에 대해서 인기있는 풀뿌리 운동처럼 보이기 위해서 공적인 관계나 정치적인 캠페인을 이용하는 것"
+
+- https://en.wikipedia.org/wiki/Astroturfing
+- https://m.blog.naver.com/il090234/221305243665
+
+</p></details>
+<!-- delimiter -->
+
 ## B
 <details><summary>Backward compatibility</summary><p>
 
 > a property of a system, product, or technology that allows for interoperability with an older legacy system, or with input designed for such a system, especially in telecommunications and computing 
 
 https://en.wikipedia.org/wiki/Backward_compatibility
+</p></details>
+<!-- delimiter -->
+
+## C
+<details><summary>Crowdsourcing</summary><p>
+
+> '대중'(crowd)과 '외부 자원 활용'(outsourcing)의 합성어로, 전문가 대신 비전문가인 고객과 대중에게 문제의 해결책을 아웃소싱하는 것
+
+- https://ko.wikipedia.org/wiki/%ED%81%AC%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%86%8C%EC%8B%B1
+</p></details>
+<!-- delimiter -->
+
+<details><summary>Crowdturfing</summary><p>
+
+> Crowdturfing: Crowdsourcing + Astroturfing
+
+> A relatively new spamming phenomenon that mobilizes large numbers of users to artificially boost support for, or the reputations of, companies, organizations, products, or even opinions.
+
+
+> 많은 고객이 온라인 제품 리뷰 및 등급에 의존하고 온라인 평판이 구매 결정을 내리는 중요한 요소로 자리 잡고 있다. 
+
+> 리뷰 시스템의 영향력이 증가함에 따라 제품의 리뷰를 일부러 높이거나 낮추는 허위 리뷰를 게재하여 경제적 이득을 취하려는 봇 또는 스패머도 증가하고 있다.
+
+한국 학술지들을 보면 **집단 스팸 리뷰** 라고 보는 듯 함.
+
+- https://www.technologyreview.com/s/528506/fake-followers-for-hire-and-how-to-spot-them/
+- https://sites.cs.ucsb.edu/~ravenben/publications/abstracts/crowdturf-www12.html
+- https://medium.com/@alitech_2017/countering-crowdturfing-5e37dfc90048
+- https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07567552&language=ko_KR
+
 </p></details>
 <!-- delimiter -->
 
@@ -23,6 +64,18 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 - Reference
   - https://en.wikipedia.org/wiki/Flash_of_unstyled_content
   - https://webkit.org/blog/66/the-fouc-problem/
+
+</p></details>
+<!-- delimiter -->
+
+## G
+<details><summary>Grassroots</summary><p>
+
+한국어로: **풀뿌리 운동**
+
+> 평범한 민중들이 지역 공동체의 살림살이에 자발적인 참여를 함으로써 지역 공동체와 실생활을 변화시키려는 참여 민주주의의 한 형태
+
+- https://ko.wikipedia.org/wiki/%ED%92%80%EB%BF%8C%EB%A6%AC_%EB%AF%BC%EC%A3%BC%EC%A3%BC%EC%9D%98
 
 </p></details>
 <!-- delimiter -->
