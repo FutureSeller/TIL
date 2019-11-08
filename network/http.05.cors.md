@@ -17,11 +17,27 @@
   - `document.domain`을 조작(super-domain까지만)
   - `document.domain = "company.com";`
 
+## Cross-origin 네트워크 접근
+- HTML 문서에서 다른 출처의 CSS, JS, Iframe, Image 등을 포함하는 것을 허용됨
+  - `<img src=>`, `<link href=>`, `<script src=>` 등으로 다른 도메인의 리소스를 가져올 수 있음
+  - but, `<script> ... </script>`로 둘러싸여있는 스크립트에서 생성된 요청은 SOP 적용을 받음 (e.g., XMLHttpRequest)
+- `document.domain`을 확장하는 방법: 서브도메인이 다를때만
+- JSONP(JSON with Padding)
+
+``` html
+<!-- parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7}); -->
+<script type="application/javascript"
+        src="http://server.example.com/Users/1234?callback=parseResponse">
+</script>
+```
+- CORS
+
+
+
 ## CORS(Cross Origin Resource Sharing)
 - "교차 출처 리소스 공유"
   - SOP에 의해 다른 Origin의 리소스와 통신하는 것을 제한하고 있음
   - 다른 Origin의 리소스가 필요할 경우 사용
-  - e.g., `<img src="a resource from other origin">`
 - Spec으로 정의되어 있음: https://www.w3.org/TR/cors, https://fetch.spec.whatwg.org
 - How (Basic)
   - 허가된 출처 집합을 서버로부터 받아올 수 있도록 하는 HTTP 헤더를 추가
@@ -64,3 +80,4 @@
 - https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
 - https://fetch.spec.whatwg.org/#cors-protocol
 - https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Fetch%EC%9D%98_%EC%82%AC%EC%9A%A9%EB%B2%95
+- https://ko.wikipedia.org/wiki/JSONP
