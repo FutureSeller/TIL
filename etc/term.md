@@ -121,7 +121,15 @@ Reference:
 - https://www.geeksforgeeks.org/pojo-vs-java-beans/
 ```
 </p></details>
+<!-- delimiter -->
 
+<details><summary>POSIX</summary><p>
+
+> 이식 가능 운영 체제 인터페이스의 약자로, 
+> 서로 다른 UNIX OS의 공통 API를 정리하여 이식성이 높은 유닉스 응용 프로그램을 개발하기 위한 목적으로 IEEE가 책정한 애플리케이션 인터페이스 규격
+
+- https://ko.wikipedia.org/wiki/POSIX
+</p></details>
 <!-- delimiter -->
 
 ## S
