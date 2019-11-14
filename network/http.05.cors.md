@@ -23,6 +23,7 @@
   - but, `<script> ... </script>`로 둘러싸여있는 스크립트에서 생성된 요청은 SOP 적용을 받음 (e.g., XMLHttpRequest)
 - `document.domain`을 확장하는 방법: 서브도메인이 다를때만
 - JSONP(JSON with Padding)
+- 아주 간단한 방법을 알게 되었음: Proxy를 하나 만들고 `Access-Control-Allow-Origin: *`을 만들어버림
 
 ``` html
 <!-- parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7}); -->
