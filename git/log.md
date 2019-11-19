@@ -1,6 +1,6 @@
-Repo: https://github.com/lirantal/is-website-vulnerable
-
 #### 특정 파일의 history & diff 확인
+- Repo: https://github.com/lirantal/is-website-vulnerable
+
 <details><summary>git log -p -- [filename]</summary><p>
 
 ``` bash
@@ -51,4 +51,23 @@ commit a1a09efbb069ac230825d078eb2eab0ae9d41554
  +  RenderConsole,                                                               
  +  Utils                                                                        
   }          
+```
+</p></details>
+
+#### 커밋 사이의 log 확인
+``` bash
+$ git log 87585c6dd986ff605786627112838f358a52cf89..a0f57d44dc275c83346d8633a084dbd1a94263d7
+commit a0f57d44dc275c83346d8633a084dbd1a94263d7
+Author: FutureSeller <f.s3ll3r@gmail.com>
+Date:   Tue Nov 19 12:09:09 2019 +0900
+
+    [20191119:algorithm] find closest dist btw 2 points
+
+commit 19072544d31358785a9889dbeaab0f6a11d99c12
+Author: FutureSeller <f.s3ll3r@gmail.com>
+Date:   Mon Nov 18 16:27:46 2019 +0900
+
+    [20191118:browser] building the dom faster
+
+// commit 87585c6dd986ff605786627112838f358a52cf89 ; 이 라인은 안보임
 ```
