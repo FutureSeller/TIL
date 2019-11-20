@@ -110,50 +110,42 @@ define('moduleA', ['require', 'exports', 'moduleB'], function(require, exports, 
 </script>
 ```
 
-#### Example: Import
-``` javascript
-import _ from 'lodash';
-import { default as _ } from 'lodash';
-import colors from 'colors/safe'; // colors = require('./colors/safe');
-
-import * as cows from 'cows';
-cows.moo();
-```
-
-#### Example: Export
+#### Example: default and import
+- 따로따로 이해를 예시를 들다보니 놓쳤던 것/헷갈렸던 것들이 있었음
+  - e.g., `export default [expr]`을 어떻게 `import`하는 쪽에선 어떻게 해야하는가?
+  - 아래와 같이 자기가 쓰고싶은 Identifier 아무거나 쓰면됨
+- 그냥 기존의 예시들을 merge 함
 
 ``` javascript
-export { a, b };
+// a.module.js
+export default Object.assign({}, { prop: 4})
 
-function a() { ... }
-function b() { ... }
+// b.module.js
+import A from 'a.module.js' // { prop : 4 }
+import B from 'a.module.js' // { prop : 4 }
+import { default as C } from 'a.module.js' // { prop: 4 }
+import { D } from 'a.module.js' // undefined
+import * as E from 'a.module.js' // { prop : 4 }
 
-/**********************/
-export default {
-  a: value1,
-  b: value2
-}
+// c.module.js
+export const getRandom = function() { ... }
 
-/**********************/
-// sri-lanka를 import해서 일부를 re-export 함
-export { Tea, Cinnamon } from 'sri-lanka';
-```
+// d.module.js
+import { getRandom } from 'c.module.js' // [Function: getRandom]
+import F from 'c.module.js' // undefined
+import * as G from 'c.module.js' // { getRandom: [Function: getRandom] }
+import { default as H } from 'c.module.js' // undefined
 
-#### Example: Change name
+// e.module.js
+export { a as A, b }
 
-``` javascript
-// import
-import { flip as flipOmelet } from 'eggs.js';
-import { flip as flipHouse } from 'real-estate.js';
+function a() {}
+function b() {}
 
-// export
-function v1() {}
-function v2() {}
-
-export {
-  v1 as streamV1,
-  v2 as streamV2
-}
+// f.module.js
+import { A, b } from 'e.module.js' // [Function: a] [Function: b]
+import { A, B } from 'e.module.js' // [Function: a] undefined
+import { A, b as B } from 'e.module.js' // [Function: a] [Function: b]
 ```
 
 ---
