@@ -50,6 +50,19 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 </p></details>
 <!-- delimiter -->
 
+## D
+<details><summary> Digital nomads </summary><p>
+
+많이 듣던 단어지만 뜻을 몰라서 기억하고자 남김.
+
+> 한국어로 "디지털 유목민". 나아가 삶을 영위하는 데에 원격 통신 기술을 적극 활용하는 사람들
+
+> 단일한 고정된 사무실에서 일하는 전통적인 방식 대신, 외국에서, 또는 카페, 공공 도서관, 협업 공간(coworking spaces), 심지어 RV까지 포함해, 원격으로 근무하는 경우가 많다.
+
+- https://ko.wikipedia.org/wiki/%EB%94%94%EC%A7%80%ED%84%B8_%EC%9C%A0%EB%AA%A9%EB%AF%BC
+</p></details>
+<!-- delimiter -->
+
 ## F
 <details><summary> FOUC(Flash of unstyled content) </summary><p>
 
