@@ -15,14 +15,14 @@ typeof null // 'object'
 typeof undefined // 'undefined'
 ```
 
-## `null`
+## `null` : 존재하지 않는 객체에 대한 참조
 > JavaScript의 원시값 중 하나로, 어떤 값이 의도적으로 비어있음을 표현합니다.
 
 > 리터럴로서 식별되지 않은 상태를 나타내며 해당 변수가 어떤 객체도 가리키고 있지 않음을 표시합니다.
 
 > *보통 함수의 반환값이 기대되지만 일치하는 값이 없을 때 대신 사용됩니다.*
 
-## `undefined`
+## `undefined` : 값이 할당되지 않은 상태
 > **전역** undefined 속성은 undefined 원시 값을 나타내며, 원시 자료형 중 하나입니다.
 
 > undefined는 전역 객체의 속성입니다. (전역 스코프에서 변수)
@@ -55,3 +55,4 @@ const undefined = 1 // Uncaught Syntax Error: Indentifier 'undefined' has alread
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/undefined
 - https://webclub.tistory.com/1
 - https://medium.com/javascript-scene/handling-null-and-undefined-in-javascript-1500c65d51ae
+- https://ko.javascript.info/types
