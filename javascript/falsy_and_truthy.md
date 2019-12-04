@@ -66,6 +66,43 @@ false
 true
 ```
 
+### AND, OR 연산자와의 관계
+
+#### OR (||) with truthy
+
+- 가장 왼쪽 피연산자부터 시작해 오른쪽으로 피연산자를 evaluate
+- 각 피연산자를 불린형으로 변환. 변환 후, true면 멈추고 해당 피연산자의 원래 값을 반환
+- 피연산자 모두를 evalutate 했으면, 마지막 피연산자를 반환
+
+``` javascript
+// json_input1 : null
+// json_input2 : undefined
+const foo = json_input1 || json_input2 || {}
+console.log(foo) // {}
+
+// json_input2 : { props: 1 }
+const bar = json_input1 || json_input2 || {}
+console.log(bar) // { props: 1 }
+
+let x;
+true || (x = 1)
+console.log(x) // undefined; if문 대용으로 쓰임
+
+false || (x = 1)
+console.log(x) // 1
+```
+
+#### AND (&&) with falsy
+- OR과 동일한데, 변환 후 값이 false인 경우에 해당 피연산자의 원래 값을 반환함
+
+``` javascript
+const result = 5 && 0 && 1
+console.log(result) // 0
+
+let x = 1
+(x > 0) && console.log('here') // here; if문 대용으로 쓰임
+```
+
 ### Questions
 <details><summary> 10 == 5 </summary><pre>
 False, if 10 == 10 then True
@@ -84,3 +121,4 @@ False, Not a Number 임을 알려줄 뿐, 어떤 값인지 알 수 없음
 ## Reference
 - https://helloworldjavascript.net/pages/150-boolean.html
 - https://www.sitepoint.com/javascript-truthy-falsy
+- https://ko.javascript.info/logical-operators
