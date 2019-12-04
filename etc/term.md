@@ -117,6 +117,21 @@ https://en.wikipedia.org/wiki/Mixin
 </p></details>
 <!-- delimiter -->
 
+<details><summary>Modal Window</summary><p>
+
+> 사용자 인터페이스 디자인 개념에서 자식 윈도에서 부모 윈도로 돌아가기 전에 사용자의 상호동작을 요구하는 창
+
+> 응용 프로그램의 주 창의 작업 흐름을 방해
+
+> It creates a mode that disables the main window but keeps it visible, with the modal window as a child window in front of it
+
+> Users must interact with the modal window before they can return to the parent application
+
+https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8B%AC_%EC%9C%88%EB%8F%84
+
+</p></details>
+<!-- delimiter -->
+
 ## P
 <details><summary>POJO</summary><p>
 
