@@ -1,6 +1,7 @@
 Feel free to describe any words with definition
 
 ## A
+
 <details><summary>Astroturfing</summary><p>
 
 > "어떤 사안에 대해서 인기있는 풀뿌리 운동처럼 보이기 위해서 공적인 관계나 정치적인 캠페인을 이용하는 것"
@@ -12,22 +13,25 @@ Feel free to describe any words with definition
 <!-- delimiter -->
 
 ## B
+
 <details><summary>Backward compatibility</summary><p>
 
-> a property of a system, product, or technology that allows for interoperability with an older legacy system, or with input designed for such a system, especially in telecommunications and computing 
+> a property of a system, product, or technology that allows for interoperability with an older legacy system, or with input designed for such a system, especially in telecommunications and computing
 
 https://en.wikipedia.org/wiki/Backward_compatibility
+
 </p></details>
 <!-- delimiter -->
 
 ## C
+
 <details><summary>Crowdsourcing</summary><p>
 
 > '대중'(crowd)과 '외부 자원 활용'(outsourcing)의 합성어로, 전문가 대신 비전문가인 고객과 대중에게 문제의 해결책을 아웃소싱하는 것
 
 - https://ko.wikipedia.org/wiki/%ED%81%AC%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%86%8C%EC%8B%B1
-</p></details>
-<!-- delimiter -->
+  </p></details>
+  <!-- delimiter -->
 
 <details><summary>Crowdturfing</summary><p>
 
@@ -35,8 +39,7 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 
 > A relatively new spamming phenomenon that mobilizes large numbers of users to artificially boost support for, or the reputations of, companies, organizations, products, or even opinions.
 
-
-> 많은 고객이 온라인 제품 리뷰 및 등급에 의존하고 온라인 평판이 구매 결정을 내리는 중요한 요소로 자리 잡고 있다. 
+> 많은 고객이 온라인 제품 리뷰 및 등급에 의존하고 온라인 평판이 구매 결정을 내리는 중요한 요소로 자리 잡고 있다.
 
 > 리뷰 시스템의 영향력이 증가함에 따라 제품의 리뷰를 일부러 높이거나 낮추는 허위 리뷰를 게재하여 경제적 이득을 취하려는 봇 또는 스패머도 증가하고 있다.
 
@@ -51,6 +54,7 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 <!-- delimiter -->
 
 ## D
+
 <details><summary> Digital nomads </summary><p>
 
 많이 듣던 단어지만 뜻을 몰라서 기억하고자 남김.
@@ -60,10 +64,11 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 > 단일한 고정된 사무실에서 일하는 전통적인 방식 대신, 외국에서, 또는 카페, 공공 도서관, 협업 공간(coworking spaces), 심지어 RV까지 포함해, 원격으로 근무하는 경우가 많다.
 
 - https://ko.wikipedia.org/wiki/%EB%94%94%EC%A7%80%ED%84%B8_%EC%9C%A0%EB%AA%A9%EB%AF%BC
-</p></details>
-<!-- delimiter -->
+  </p></details>
+  <!-- delimiter -->
 
 ## F
+
 <details><summary> FOUC(Flash of unstyled content) </summary><p>
 
 > an instance where a web page appears briefly with the browser's default styles prior to loading an external CSS stylesheet, due to the web browser engine rendering the page before all information is retrieved. The page corrects itself as soon as the style rules are loaded and applied
@@ -82,6 +87,7 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 <!-- delimiter -->
 
 ## G
+
 <details><summary>Grassroots</summary><p>
 
 한국어로: **풀뿌리 운동**
@@ -94,26 +100,28 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 <!-- delimiter -->
 
 ## M
+
 <details><summary>Mixin</summary><p>
 
 > a class that contains methods for use by other classes without having to be the parent class of those other classes.
 
-``` javascript
+```javascript
 // https://blog.seotory.com/post/2017/08/javascript-es6-use-class-and-mixin
-var calculatorMixin = function ( Base ) {
-	return class extends Base {
-  		calc() { }
-	};
-}
+var calculatorMixin = function(Base) {
+  return class extends Base {
+    calc() {}
+  };
+};
 
-var randomizerMixin = function ( Base ) {
-	return class extends Base {
-  		randomize() { }
-	};
-}
+var randomizerMixin = function(Base) {
+  return class extends Base {
+    randomize() {}
+  };
+};
 ```
 
 https://en.wikipedia.org/wiki/Mixin
+
 </p></details>
 <!-- delimiter -->
 
@@ -133,6 +141,7 @@ https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8B%AC_%EC%9C%88%EB%8F%84
 <!-- delimiter -->
 
 ## P
+
 <details><summary>POJO</summary><p>
 
 ```
@@ -144,23 +153,25 @@ the simplest kind of object that should not (in Java):
 2. implement prespeficied interfacse
 3. contain prespecified annotations
 
-Reference: 
+Reference:
 - https://en.wikipedia.org/wiki/Plain_old_Java_object
 - https://www.geeksforgeeks.org/pojo-vs-java-beans/
 ```
+
 </p></details>
 <!-- delimiter -->
 
 <details><summary>POSIX</summary><p>
 
-> 이식 가능 운영 체제 인터페이스의 약자로, 
+> 이식 가능 운영 체제 인터페이스의 약자로,
 > 서로 다른 UNIX OS의 공통 API를 정리하여 이식성이 높은 유닉스 응용 프로그램을 개발하기 위한 목적으로 IEEE가 책정한 애플리케이션 인터페이스 규격
 
 - https://ko.wikipedia.org/wiki/POSIX
-</p></details>
-<!-- delimiter -->
+  </p></details>
+  <!-- delimiter -->
 
 ## S
+
 <details><summary>SEO</summary><p>
 
 > 웹 페이지 검색엔진이 자료를 수집하고 순위를 매기는 방식에 맞게 웹 페이지를 구성해서 검색 결과의 상위에 나올 수 있도록 하는 작업
@@ -174,12 +185,12 @@ Reference:
 - 읽어봄직한 것들
   - https://www.twinword.co.kr/blog/what-makes-naver-seo-difficult
   - https://brunch.co.kr/@magictbl/22
-  
-
 
 </p></details>
+<!-- delimiter -->
 
 ## T
+
 <details><summary>TTFB</summary><p>
 	
 ```
@@ -188,5 +199,24 @@ TTFB(Time to First Byte)
 - measures the duration from the user or client making an HTTP request to the first byte of the page being received by the client's browser.
 - https://en.wikipedia.org/wiki/Time_to_first_byte
 ```
+</p></details>
+<!-- delimiter -->
+
+## W
+
+<details><summary>Wizard(Design Pattern)</summary><p>
+
+(주의: 여러분이 생각하는 마법사 아님)
+
+> A wizard presents a series of steps or conditions that the user needs to complete in order to accomplish a goal
+
+> One common UI design pattern is to separate a single form out into sepearate pages of inputs, commonly known as a Wizard
+
+가장 쉽게 생각하면, installer를 생각하면 된다. 우리가 귀찮아서 많이 하는 Next > ..... > Finish
+이런 형태를 Wizard라고 함. 자세한 내용은 아래 링크를 참고하면 됨.
+
+- https://uxplanet.org/wizard-design-pattern-8c86e14f2a38
+- https://redux-form.com/8.2.2/examples/wizard
+
 </p></details>
 <!-- delimiter -->
