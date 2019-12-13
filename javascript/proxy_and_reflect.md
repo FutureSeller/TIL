@@ -101,7 +101,23 @@ typeof proxy; //
 
 ---
 
+# Reflect
+
+- 중간에서 가로챌 수 있는 자바스크립트 작업에 대한 메서드를 제공하는 내장 객체; 메서드의 종류는 프록시의 trap들과 동일함
+- 프록시를 좀 간단하게 사용하는 것 처럼 보이기도 함
+
+```javascript
+// [[Set]]: obj[prop] = value;
+// Reflect: Reflect.set(obj, prop, value)
+
+let user = {};
+Reflect.set(user, "name", "john");
+console.log(user.name); // john
+```
+
 ## Reference
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 - https://ko.javascript.info/proxy
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+- https://ko.javascript.info/proxy#ref-746
