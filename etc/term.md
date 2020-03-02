@@ -202,6 +202,17 @@ TTFB(Time to First Byte)
 </p></details>
 <!-- delimiter -->
 
+## U
+
+<details><summary>UUID</summary><p>
+	
+범용 고유 식별자(汎用固有識別子, 영어: universally unique identifier, UUID)
+- 소프트웨어 구축에 쓰이는 식별자 표준
+- 개발주체가 스스로 이름을 짓도록 하되 고유성을 충족할 수 있는 방법
+- 고유성을 완벽하게 보장할 수는 없지만 실제 사용상에서 중복될 가능성이 거의 없다고 인정되기 때문에 많이 사용됨
+
+</p></details>
+
 ## W
 
 <details><summary>Wizard(Design Pattern)</summary><p>
