@@ -17,9 +17,7 @@ Today I Learned
 
 ### Commit
 - format: `[${date}:${dirname}] ${msg}`
-- date: yyyymmdd
-  - 기준점: 오전 6시
-  - example: 20190701 06:00 ~ 20190702 05:59 → 20190701
+- date: yyyymmdd; 시차가 날 경우, 현지 시간을 따른다
 - dirname: 현재 문서가 위치한 dirname. root일 경우 empty
 - msg: commit message. 점진적인 update 필요 시, `..ing`를 뒤에 붙임
 - example
