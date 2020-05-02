@@ -1,4 +1,4 @@
-# Background: Pre-rendering
+# Pre-rendering
 
 > To generate the site in advance
 
