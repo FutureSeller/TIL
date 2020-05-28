@@ -25,9 +25,5 @@ Today I Learned
   - @args(date=20190701, dirname= , msg="update README.md") → `[20190701] update README.md`
   - @args(date=20190701, dirname=react , msg="CRA ..ing") → `[20190701:react] CRA ..ing`
 
-### ETC
-- root에 문서를 만들지 않는다. (README.md 제외)
-- Subdirectory를 만들지 않는다.
-
 ## Reference
 - [JayJin님의 TIL](https://github.com/milooy/TIL)
