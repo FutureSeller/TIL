@@ -11,7 +11,37 @@
   - IE는 당연히 안되고, Safari 진영에서 조만간 지원하는 듯함
   - https://caniuse.com/#search=webp 여길 확인해보니 조만간 최신버전들에선 다 지원하는 듯 함.
 
+## Using WebP in HTML
+```html
+<img src="img/path-to-image.webp" alt="...">
+
+<picture>
+  <source srcset="img/path-to-image.webp" type="image/webp">
+  <source srcset="img/path-to-image.jpg" type="image/jpeg">
+  <img src="img/creakyOldJPEG.jpg" alt="Alt Text!">
+</picture>
+```
+
+## Using WebP Images in CSS
+```css
+.no-webp .elementWithBackgroundImage {
+  background-image: url("image.jpg");
+}
+
+.webp .elementWithBackgroundImage{
+  background-image: url("image.webp");
+}
+```
+
+이렇게 두고 JS로 제어하면 됨.
+
+## 단점은?
+- 이전 브라우저를 위해 다른 미디어 타입의 여러벌의 이미지를 가지고 있어야 함
+- WebP로 변환해야할 이미지가 너무 많으면 전환을 하지 않는 결정을 할 수 있음
+- CSS에서 WebP 이미지를 사용해야 하는 경우, JS를 관리해줘야 함.
+
 ---
 ## Reference
 - https://developers.google.com/speed/webp
 - https://ko.wikipedia.org/wiki/WebP
+- https://css-tricks.com/using-webp-images/
