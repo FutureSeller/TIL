@@ -23,6 +23,19 @@ https://en.wikipedia.org/wiki/Backward_compatibility
 </p></details>
 <!-- delimiter -->
 
+<details><summary>Bus Factor</summary><p>
+
+> 팀원 중 한 명이 버스에 치여 팀이 위기에 빠질 수 있는 위험도
+
+버스 지수가 낮다는 것은 팀 구성원 간 공유 되지 않은 정보나 기능이 많거나 특정인에게 주요 업무가 과중 되었음을 의미한다. 이로 인해 프로젝트가 자칫 위험에 빠질 수 있기 때문에 여럿이 협업을 해야 하는 일은 반드시 버스 지수를 높여야 한다.
+
+버스 지수를 높이기 위해 팀단위로 일하는 조직은 모든 구성원들이 알아야 하는 중요한 정보는 반드시 문서화하거나 공유 가능한 채널을 제공해야 하고, 특정인에게만 다수의 업무를 과중하거나 집중시키지 말아야 한다.
+
+https://gradler.tistory.com/11
+
+</p></details>
+<!-- delimiter -->
+
 ## C
 
 <details><summary>Crowdsourcing</summary><p>
