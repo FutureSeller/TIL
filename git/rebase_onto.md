@@ -52,7 +52,7 @@ o master
 
 `upstream`에 없는 `branch`의 커밋들을 `newbase` 브랜치에 적용한다. 쉽게 얘기하면 base를 `newbase`로 바꾸고, branch - upstream의 커밋들을 새로운 base위에 쌓아준다. 
 
-Step3의 상황에서 develop이라는 녀석을 base로 삼고, feature/p2와 feature/wishes의 작업의 diff만을 따서 develop에 얹어 주는 것(onto)이다. 
+Step3의 상황에서 develop이라는 녀석을 base로 삼고, develop부터 feature/p2, feature/wishes의 공통 조상까지의 작업의 diff만을 따서 develop에 얹어 주는 것(onto)이다.
 
 ```
 $ git rebase --onto develop feature/p2 feature/wishes
