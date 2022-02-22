@@ -58,3 +58,7 @@ Step3의 상황에서 develop이라는 녀석을 base로 삼고, feature/p2와 f
 $ git rebase --onto develop feature/p2 feature/wishes
 ```
 
+---
+## Reference
+- https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0#_rebase_%ED%99%9C%EC%9A%A9
+
