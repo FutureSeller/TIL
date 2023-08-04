@@ -68,10 +68,6 @@ package.json의 `exports`를 지원하기 위해서는 moduleResolustion을 node
   - ts에서 node.js의 esm 기능과 exports를 지원
   - node보다 더 esm에 적합한 모듈 해석 방식을 사용
 
-(추측 및 가설) 
-- 현재 상황: 라이브러리 package.json의 "type"이 module도 세팅되어있고 이녀석의 확장자는 `.js`
-- [`moduleResolution: node`에서는 node.js가 "알아서" 해줬는데](https://www.typescriptlang.org/tsconfig#moduleResolution), nodenext가 되면서 명시적으로 취급하면서(?) cjs로 resolving하려니 에러가 난게 아닐까?
-
 [module resolution full algorithm](https://nodejs.org/api/modules.html#modules_all_together)을 보면 아래와 같은 과정을 거친다(cjs -> require)
 
 - LOAD_NODE_MODULES(X, dirname(Y))
@@ -84,13 +80,16 @@ package.json의 `exports`를 지원하기 위해서는 moduleResolustion을 node
   - PACKAGE_RESOLVE(specifier, parentURL)
     - 11. parentURL is not the file system root > return package.json ['main']
 
-좀 더 파봐야하겠지만.... 뭐 아무튼 요약하자면. type="module"이니 ESM-RESOLVE를 사용하려고 했을 것인데, 현재 환경이 CJS여서 그런게 아닐까 싶다. (아직도 추측 중. 시간이 없어 나중에 다시 살펴보기로)
-
 ---
 
-암튼. exports를 사용하려면 `moduleResolution: nodenext | node16`을 써야 지원하고, 기존 패키지들 중에 esm만 지원하는 녀석이 있다면, cjs/esm을 모두 지원하길. 쉽지 않군..
+고민의 과정을 조금 더 거치 그냥 가짜 ESM이기때문 아닐까라는 생각이 들었다. 사실 뭐 TSC/Babel이 트랜스파일링하고 있으니.
+tsc 입장에서 지금 내 환경이 cjs인데, esm 파일(type="module")이니까 esm 로더를 쓰려고 하기때문에 문제가 있을거야 해주는 듯하다.
 
+> The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("@a/b")' call instead.
+  To convert this file to an ECMAScript module, add the field `"type": "module"` to '/Users/jihoon/Workspaces/asdf/package.json'.ts(1479)
 
+역시 에러메세지를 꼼꼼히 읽어봐야한다. 지금 현재 파일은 cjs module이라 imports를 하면 require를 할건데, 가져오려는 파일이 esm이니 require를 못쓴다는 말. -_-
+그냥 저 라이브러리가 cjs를 지원하도록 하면된다.
 
 ---
 ## Reference 
